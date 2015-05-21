@@ -1,0 +1,56 @@
+<idea-plugin version="2">
+  <id>cat.kanbanapps.gradlekiller</id>
+  <name>Gradle Killer</name>
+  <version>1.0</version>
+  <vendor>Kanban Apps</vendor>
+
+  <description><![CDATA[
+      This plugin kills Gradle tasks using the system task manager with just one click.<br>
+      No more struggling with "ps" or playing Russian roulette with "java.exe" processes! Just click the icon in the "Run" section and you're done!<br>
+      <br>
+      <b>NOTE:</b> The plugin only works on Windows Vista (or newer) and Unix machines (with the pgrep command).
+    ]]></description>
+
+  <change-notes><![CDATA[
+      <b>v1.0</b><br>
+      Windows support fixed.<br>
+      <br>
+      <b>v0.2</b><br>
+      Added Windows support.<br>
+      <br>
+      <b>v0.1</b><br>
+      Initial release.
+    ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="GradleKiller.KillGradle" class="cat.kanbanapps.gradlekiller.KillGradleAction" text="Kill Gradle"
+            description="Kill Gradle if a current task is running" icon="/icons/gradle_killer_icon.png">
+      <add-to-group group-id="ToolbarRunGroup" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt K"/>
+    </action>
+  </actions>
+
+</idea-plugin>
