@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>cat.kanbanapps.gradlekiller</id>
   <name>Gradle Killer</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <vendor>Kanban Apps</vendor>
 
   <description><![CDATA[
@@ -12,6 +12,9 @@
     ]]></description>
 
   <change-notes><![CDATA[
+      <b>v1.2</b><br>
+      The plugin is usable again if using JDK lower than 8.<br>
+      <br>
       <b>v1.1</b><br>
       Fix configuration issue for some IntelliJ-based products.<br>
       <br>

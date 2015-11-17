@@ -46,7 +46,7 @@ public class KillGradleAction extends AnAction {
     }
 
     /**
-     * @param pid
+     * @param pid The PID of the process to kill
      * @return true if killed, false if not
      */
     private boolean killProcess(String pid) {
@@ -58,7 +58,7 @@ public class KillGradleAction extends AnAction {
     }
 
     private String[] getPidsOnUnix() throws UnsupportedOperationException {
-        ArrayList<String> pids = new ArrayList<>();
+        ArrayList<String> pids = new ArrayList<String>();
         Runtime r = Runtime.getRuntime();
         Process p;
         try {
@@ -88,7 +88,7 @@ public class KillGradleAction extends AnAction {
     }
 
     private String[] getPidsOnWindows() throws UnsupportedOperationException {
-        ArrayList<String> pids = new ArrayList<>();
+        ArrayList<String> pids = new ArrayList<String>();
         Runtime r = Runtime.getRuntime();
         Process p;
         try {
@@ -99,6 +99,7 @@ public class KillGradleAction extends AnAction {
 
             while ((line = b.readLine()) != null) {
                 try {
+                    //noinspection ResultOfMethodCallIgnored
                     Integer.parseInt(line.trim());
                     pids.add(line.trim());
                 } catch (NumberFormatException e) {
